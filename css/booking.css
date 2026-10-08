@@ -1,0 +1,736 @@
+/* booking.css — load after tripOnn.css */
+
+/* =========================================================
+   HERO / BOOKING MODE
+   ========================================================= */
+
+.hero.booking-mode {
+  height: auto;
+  min-height: 0;
+  padding-top: 130px;
+  padding-bottom: 36px;
+}
+
+.hero.booking-mode .intro,
+.hero.booking-mode .hero-search-bar {
+  display: none;
+}
+
+.hero.booking-mode .hero-search {
+  width: 100%;
+  max-width: none;
+}
+
+.hero.booking-mode .hero-tab.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+/* =========================================================
+   BOOKING FORM
+   ========================================================= */
+
+.bk-form {
+  display: none;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 0 16px 16px 16px;
+  box-shadow: 0 18px 40px rgba(18, 54, 52, 0.22);
+}
+
+.hero.booking-mode .bk-form {
+  display: flex;
+}
+
+.bk-f {
+  flex: 1 1 150px;
+  display: grid;
+  gap: 4px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.bk-f span {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.bk-f i {
+  color: var(--primary);
+  margin-right: 3px;
+}
+
+.bk-f input {
+  border: 0;
+  outline: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  background: transparent;
+  min-width: 0;
+}
+
+.bk-go {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  transition: background 0.25s;
+  cursor: pointer;
+}
+
+.bk-go:hover {
+  background: #e28222;
+}
+
+.bk-form > .bk-go {
+  flex: 0 0 auto;
+}
+
+.bk-chips {
+  flex: 1 1 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.bk-chips button {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: #e9f1ed;
+  color: var(--primary-dark);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bk-chips button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+/* =========================================================
+   RESULTS AREA
+   ========================================================= */
+
+.bk-view {
+  max-width: 1400px;
+  margin: 40px auto 60px;
+  padding: 0 4%;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.bk-view[hidden] {
+  display: none;
+}
+
+
+/* =========================================================
+   FILTER SIDEBAR
+   ========================================================= */
+
+.bk-side {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  position: sticky;
+  top: 90px;
+}
+
+.bk-side-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+}
+
+.bk-side-head button {
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bk-side h5 {
+  margin: 20px 0 8px;
+  font-size: 13px;
+}
+
+.bk-side input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.bk-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 13px;
+  color: #345252;
+  cursor: pointer;
+}
+
+.bk-check input {
+  accent-color: var(--primary);
+  width: 15px;
+  height: 15px;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.bk-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.bk-top p {
+  margin: 0;
+}
+
+.bk-top select {
+  margin-left: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+
+/* =========================================================
+   DATE BUTTONS / HOTEL TABS
+   ========================================================= */
+
+.bk-dates,
+.bk-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+  scrollbar-width: none;
+}
+
+.bk-dates::-webkit-scrollbar,
+.bk-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.bk-dates button {
+  flex: 1 0 110px;
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  text-align: center;
+  cursor: pointer;
+}
+
+.bk-dates small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.bk-dates button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.bk-dates button.active small {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bk-tabs button {
+  flex: 0 0 auto;
+  padding: 9px 18px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bk-tabs button.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.bk-card {
+  position: relative;
+  display: grid;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 24px rgba(20, 55, 52, 0.06);
+}
+
+.bk-card .wishlist-heart {
+  top: 12px;
+  right: 12px;
+}
+
+.bk-main {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.f-price {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+  text-align: right;
+}
+
+.f-price b {
+  font: 800 22px "Manrope", sans-serif;
+}
+
+.f-price small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.f-price .bk-go {
+  margin-top: 6px;
+}
+
+.bk-card .f-price {
+  padding-top: 26px;
+}
+
+
+/* =========================================================
+   FLIGHT CARD
+   ========================================================= */
+
+.bk-card.flight {
+  grid-template-columns:
+    56px
+    80px
+    1fr
+    80px
+    140px
+    150px;
+}
+
+
+/* =========================================================
+   AIRLINE LOGO
+   ========================================================= */
+
+.logo-chip {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+  font: 800 20px "Manrope", sans-serif;
+}
+
+.logo-chip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+  display: block;
+}
+
+
+/* =========================================================
+   FLIGHT TIME / ROUTE
+   ========================================================= */
+
+.f-time {
+  display: grid;
+  gap: 2px;
+}
+
+.f-time b {
+  font: 800 19px "Manrope", sans-serif;
+}
+
+.f-time small,
+.f-mid small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.f-mid {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+}
+
+.f-mid i {
+  width: 100%;
+  height: 2px;
+  background: var(--line);
+}
+
+.f-name {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   HOTEL CARD
+   ========================================================= */
+
+.bk-card.hotel {
+  grid-template-columns: 200px 1fr 160px;
+  padding: 12px;
+}
+
+.h-img {
+  position: relative;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.h-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.h-img span {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.h-info h3 {
+  font: 700 17px "Manrope", sans-serif;
+}
+
+.h-info p {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.h-loc i {
+  color: var(--accent);
+}
+
+.stars {
+  color: #f5b301;
+  margin-right: 6px;
+  letter-spacing: 1px;
+}
+
+.h-rate b {
+  background: var(--primary);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+.h-am span {
+  display: inline-block;
+  margin: 0 8px 4px 0;
+  padding: 3px 9px;
+  background: #f0f5f3;
+  border-radius: 6px;
+}
+
+.bk-empty {
+  padding: 50px 0;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .bk-view {
+    grid-template-columns: 230px 1fr;
+    gap: 18px;
+  }
+
+  /* Flight card: 2 rows */
+
+  .bk-card.flight {
+    grid-template-columns:
+      48px
+      auto
+      1fr
+      auto;
+
+    grid-template-areas:
+      "logo dep mid arr"
+      "name name price price";
+
+    gap: 12px 14px;
+    padding: 46px 16px 16px;
+  }
+
+  .bk-card.flight .logo-chip {
+    grid-area: logo;
+  }
+
+  .bk-card.flight .f-time.dep {
+    grid-area: dep;
+  }
+
+  .bk-card.flight .f-mid {
+    grid-area: mid;
+  }
+
+  .bk-card.flight .f-time.arr {
+    grid-area: arr;
+    text-align: right;
+  }
+
+  .bk-card.flight .f-name {
+    grid-area: name;
+    align-self: center;
+  }
+
+  .bk-card.flight .f-price {
+    grid-area: price;
+    justify-self: end;
+    justify-items: start;
+    text-align: left;
+
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "b btn"
+      "s btn";
+
+    align-items: center;
+    gap: 0 12px;
+    padding-top: 0;
+  }
+
+  .bk-card.flight .f-price b {
+    grid-area: b;
+    font-size: 19px;
+  }
+
+  .bk-card.flight .f-price small {
+    grid-area: s;
+  }
+
+  .bk-card.flight .f-price .bk-go {
+    grid-area: btn;
+    margin-top: 0;
+  }
+
+  .bk-card.hotel {
+    grid-template-columns: 170px 1fr 150px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .bk-view {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+  }
+
+  /* Filters mobile */
+
+  .bk-side {
+    position: static;
+  }
+
+  .bk-side-head {
+    cursor: pointer;
+  }
+
+  .bk-side-head b::after {
+    content: " ▾";
+    font-size: 12px;
+    color: var(--primary);
+  }
+
+  .bk-side.open .bk-side-head b::after {
+    content: " ▴";
+  }
+
+  .bk-side:not(.open) > :not(.bk-side-head) {
+    display: none;
+  }
+
+  /* Hotel card */
+
+  .bk-card.hotel {
+    grid-template-columns: 190px 1fr;
+    gap: 14px;
+  }
+
+  .bk-card.hotel .h-info {
+    padding-right: 36px;
+  }
+
+  .bk-card.hotel .f-price {
+    grid-column: 1 / -1;
+    justify-items: start;
+    text-align: left;
+
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "b btn"
+      "s btn";
+
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .bk-card.hotel .f-price b {
+    grid-area: b;
+  }
+
+  .bk-card.hotel .f-price small {
+    grid-area: s;
+  }
+
+  .bk-card.hotel .f-price .bk-go {
+    grid-area: btn;
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .bk-form {
+    padding: 12px;
+  }
+
+  .bk-form > .bk-go {
+    flex: 1 1 100%;
+  }
+
+  .bk-top {
+    gap: 8px;
+  }
+
+  .bk-dates button {
+    flex-basis: 96px;
+  }
+
+  /* Flight */
+
+  .bk-card.flight {
+    padding: 46px 14px 14px;
+    gap: 10px 10px;
+
+    grid-template-columns:
+      40px
+      auto
+      1fr
+      auto;
+  }
+
+  .bk-card.flight .logo-chip {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  }
+
+  .logo-chip img {
+    padding: 5px;
+  }
+
+  .f-time b {
+    font-size: 16px;
+  }
+
+  /* Hotel */
+
+  .bk-card.hotel {
+    grid-template-columns: 1fr;
+  }
+
+  .bk-card.hotel .h-info {
+    padding-right: 0;
+  }
+
+  .h-img {
+    height: 180px;
+  }
+}
+
+
+/* =========================================================
+   HERO IMAGE FADE
+   ========================================================= */
+
+.hero-nav img {
+  transition: opacity 0.25s ease;
+}

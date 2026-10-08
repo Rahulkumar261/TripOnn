@@ -1,0 +1,91 @@
+{
+  "bali": {
+    "names": ["Bali", "Bali, Indonesia", "Indonesia"],
+    "mapQuery": "Bali, Indonesia",
+    "country": "Indonesia",
+    "language": "Indonesian",
+    "currency": "IDR (Rp)",
+    "bestTime": "Apr - Oct",
+    "duration": "6 Nights / 7 Days",
+    "about": "Bali is known for its beaches, rice terraces, temples and spiritual culture. This package covers beach time, Ubud's culture and island day trips.",
+    "inclusions": ["flights", "hotel", "breakfast", "transfers", "sightseeing", "insurance"],
+    "itinerary": [
+      { "title": "Arrival in Bali", "text": "Airport pickup and hotel check-in." },
+      { "title": "Ubud tour", "text": "Rice terraces, temples and local markets." },
+      { "title": "Nusa Penida", "text": "Day trip with snorkelling." },
+      { "title": "Water activities", "text": "Scuba, water sports and beach time." }
+    ],
+    "nearby": [
+      { "name": "Ubud", "dist": "35 km", "note": "Rice terraces and art markets" },
+      { "name": "Seminyak", "dist": "12 km", "note": "Beach clubs and cafes" },
+      { "name": "Nusa Penida", "dist": "45 min by boat", "note": "Cliffs and snorkelling" },
+      { "name": "Uluwatu", "dist": "25 km", "note": "Clifftop temple and sunsets" }
+    ]
+  },
+  "maldives": {
+    "names": ["Maldives", "Malé, Maldives"],
+    "mapQuery": "Male, Maldives",
+    "country": "Maldives",
+    "language": "Dhivehi, English",
+    "currency": "MVR",
+    "bestTime": "Nov - Apr",
+    "duration": "4 Nights / 5 Days",
+    "about": "Overwater villas, clear lagoons and coral reefs. A relaxed island stay with snorkelling and sunset cruises.",
+    "inclusions": ["flights", "hotel", "breakfast", "transfers", "insurance"],
+    "itinerary": [
+      { "title": "Arrival", "text": "Speedboat transfer to the resort." },
+      { "title": "Snorkelling", "text": "House reef and lagoon trip." },
+      { "title": "Sunset cruise", "text": "Dolphin spotting and dinner." },
+      { "title": "Departure", "text": "Check-out and airport transfer." }
+    ],
+    "nearby": [
+      { "name": "Hulhumale", "dist": "10 km", "note": "Beach and cafes near the airport" },
+      { "name": "Maafushi", "dist": "27 km", "note": "Local island and water sports" },
+      { "name": "Banana Reef", "dist": "15 km", "note": "Popular dive site" }
+    ]
+  },
+  "dubai": {
+    "names": ["Dubai"],
+    "mapQuery": "Dubai, United Arab Emirates",
+    "country": "UAE",
+    "language": "Arabic, English",
+    "currency": "AED",
+    "bestTime": "Nov - Mar",
+    "duration": "5 Nights / 6 Days",
+    "about": "Skyscrapers, desert safaris, malls and beaches. This trip mixes city sights with a desert evening.",
+    "inclusions": ["flights", "hotel", "breakfast", "transfers", "sightseeing", "visa"],
+    "itinerary": [
+      { "title": "Arrival", "text": "Airport pickup and hotel check-in." },
+      { "title": "City tour", "text": "Burj Khalifa, Dubai Mall and the fountain show." },
+      { "title": "Desert safari", "text": "Dune drive, camel ride and BBQ dinner." },
+      { "title": "Abu Dhabi day trip", "text": "Sheikh Zayed Mosque and Corniche." }
+    ],
+    "nearby": [
+      { "name": "Burj Khalifa", "dist": "5 km", "note": "World's tallest tower" },
+      { "name": "Palm Jumeirah", "dist": "25 km", "note": "Beaches and resorts" },
+      { "name": "Abu Dhabi", "dist": "140 km", "note": "Mosque and Louvre" },
+      { "name": "Hatta", "dist": "130 km", "note": "Mountains and dam" }
+    ]
+  },
+  "goa": {
+    "names": ["Goa"],
+    "mapQuery": "Goa, India",
+    "country": "India",
+    "language": "Konkani, English",
+    "currency": "INR (₹)",
+    "bestTime": "Nov - Feb",
+    "duration": "3 Nights / 4 Days",
+    "about": "Beaches, nightlife, old Portuguese churches and water sports.",
+    "inclusions": ["hotel", "breakfast", "transfers", "sightseeing"],
+    "itinerary": [
+      { "title": "Arrival", "text": "Check-in and Calangute beach evening." },
+      { "title": "North Goa", "text": "Fort Aguada, Baga and Anjuna." },
+      { "title": "South Goa", "text": "Old Goa churches and Palolem beach." }
+    ],
+    "nearby": [
+      { "name": "Baga Beach", "dist": "10 km", "note": "Water sports and nightlife" },
+      { "name": "Fort Aguada", "dist": "15 km", "note": "17th century fort" },
+      { "name": "Dudhsagar Falls", "dist": "60 km", "note": "Waterfall trek" }
+    ]
+  }
+}

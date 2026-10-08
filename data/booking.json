@@ -1,0 +1,174 @@
+{
+  "routes": [
+    "Bhubaneswar → Delhi",
+    "Bhubaneswar → Mumbai",
+    "Bhubaneswar → Bangalore"
+  ],
+  "places": [
+    "Goa",
+    "Manali",
+    "Jaipur",
+    "Kashmir",
+    "Andaman",
+    "Dubai"
+  ],
+  "flights": [
+    {
+      "air": "IndiGo",
+      "code": "6E 295",
+      "dep": "05:55",
+      "arr": "08:20",
+      "m": 145,
+      "stops": 0,
+      "price": 4899,
+      "img": "https://i.pinimg.com/736x/69/31/9f/69319fd028bf344b18b81a2d2868b66d.jpg"
+    },
+    {
+      "air": "Air India",
+      "code": "AI 531",
+      "dep": "07:30",
+      "arr": "10:00",
+      "m": 150,
+      "stops": 0,
+      "price": 5299,
+      "img": "https://i.pinimg.com/1200x/5f/9b/e5/5f9be5876eda5d373d7f91a8faf5e659.jpg"
+    },
+    {
+      "air": "Qatar Airways",
+      "code": "UK 752",
+      "dep": "09:15",
+      "arr": "11:50",
+      "m": 155,
+      "stops": 0,
+      "price": 6199,
+      "img": "https://i.pinimg.com/1200x/e8/10/b5/e810b5dc83a73860e95cb9667817dfe2.jpg"
+    },
+    {
+      "air": "AirAsia",
+      "code": "QP 1532",
+      "dep": "12:10",
+      "arr": "14:50",
+      "m": 160,
+      "stops": 0,
+      "price": 5799,
+      "img": "https://i.pinimg.com/1200x/36/1a/75/361a756cf4bb8a9cebec83592d6a895c.jpg"
+    },
+    {
+      "air": "SpiceJet",
+      "code": "SG 816",
+      "dep": "16:20",
+      "arr": "19:05",
+      "m": 165,
+      "stops": 1,
+      "price": 6499,
+      "img": "https://cdn.brandfetch.io/id0DNBaeFO/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+    }
+  ],
+  "hotels": [
+    {
+      "name": "Taj Exotica Resort & Spa",
+      "loc": "Benaulim Beach, Goa",
+      "type": "Resorts",
+      "star": 5,
+      "rate": 4.8,
+      "rev": "1.2K",
+      "price": 12999,
+      "img": "https://plus.unsplash.com/premium_photo-1675745329954-9639d3b74bbf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aG90ZWx8ZW58MHx8MHx8fDA%3D",
+      "am": [
+        "Beach Front",
+        "Swimming Pool",
+        "Spa"
+      ],
+      "tag": "Featured"
+    },
+    {
+      "name": "The Leela Goa",
+      "loc": "Mobor, Goa",
+      "type": "Hotels",
+      "star": 5,
+      "rate": 4.7,
+      "rev": "980",
+      "price": 10499,
+      "img": "https://images.unsplash.com/photo-1549294413-26f195200c16?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fHww",
+      "am": [
+        "Beach Access",
+        "Pool",
+        "Free WiFi"
+      ]
+    },
+    {
+      "name": "Novotel Goa Resort & Spa",
+      "loc": "Candolim, Goa",
+      "type": "Resorts",
+      "star": 4,
+      "rate": 4.5,
+      "rev": "2.3K",
+      "price": 7499,
+      "img": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhvdGVsfGVufDB8fDB8fHww",
+      "am": [
+        "Swimming Pool",
+        "Kids Club",
+        "Free WiFi"
+      ]
+    },
+    {
+      "name": "Holiday Inn Goa",
+      "loc": "Cavelossim, Goa",
+      "type": "Hotels",
+      "star": 4,
+      "rate": 4.3,
+      "rev": "1.1K",
+      "price": 5999,
+      "img": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhvdGVsfGVufDB8fDB8fHww",
+      "am": [
+        "Pool",
+        "Gym",
+        "Restaurant"
+      ]
+    },
+    {
+      "name": "Villa Palmeira",
+      "loc": "Assagao, Goa",
+      "type": "Villas",
+      "star": 4,
+      "rate": 4.4,
+      "rev": "310",
+      "price": 8999,
+      "img": "https://plus.unsplash.com/premium_photo-1687960116497-0dc41e1808a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGhvdGVsfGVufDB8fDB8fHww",
+      "am": [
+        "Private Pool",
+        "Kitchen",
+        "Free WiFi"
+      ]
+    },
+    {
+      "name": "Casa Sunrise Homestay",
+      "loc": "Palolem, Goa",
+      "type": "Homestays",
+      "star": 3,
+      "rate": 4.0,
+      "rev": "150",
+      "price": 2999,
+      "img": "https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdGVsfGVufDB8fDB8fHww",
+      "am": [
+        "Breakfast",
+        "Free WiFi"
+      ]
+    },
+    {
+      "name": "MountTreck Resort",
+      "loc": "Melon Street, Manali",
+      "type": "Resorts",
+      "star": 5,
+      "rate": 4.8,
+      "rev": "1.8K",
+      "price": 15999,
+      "img": "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG90ZWx8ZW58MHx8MHx8fDA%3D",
+      "am": [
+        "Mountain Front",
+        "Swimming Pool"
+      ],
+      "tag": "Popular"
+    }
+  ]
+}

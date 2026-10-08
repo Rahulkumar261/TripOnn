@@ -1,0 +1,165 @@
+/* wishlist.css — heart buttons, navbar heart, dropdown panel. Load after tripOnn.css */
+
+.wishlist-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.2s ease;
+}
+
+.wishlist-heart:hover {
+  transform: scale(1.12);
+}
+
+.wishlist-heart i {
+  font-size: 16px;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.wishlist-heart.active i {
+  color: #e63950; /* red */
+}
+
+/* =========================================================
+   Navbar heart button (next to Login)
+   ========================================================= */
+#navWishlistBtn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 6px;
+}
+
+#navWishlistBtn i.fa-solid {
+  color: #e63950;
+}
+
+.wishlist-count {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  background: #e63950;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 5px;
+  border-radius: 999px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.wishlist-count.hidden {
+  display: none;
+}
+
+/* =========================================================
+   Wishlist dropdown panel
+   ========================================================= */
+.wishlist-panel {
+  position: absolute;
+  top: 64px;
+  right: 20px;
+  width: 300px;
+  max-height: 420px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  padding: 16px;
+  z-index: 500;
+}
+
+.wishlist-panel.hidden {
+  display: none;
+}
+
+.wishlist-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.wishlist-panel-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.wishlist-panel-head button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #666;
+}
+
+.wishlist-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.wishlist-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.wishlist-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.wishlist-item-info h4 {
+  margin: 0;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wishlist-item-info p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.wishlist-item-remove {
+  background: none;
+  border: none;
+  color: #e63950;
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.wishlist-empty-msg {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  padding: 24px 6px;
+}
+
+.wishlist-empty-msg.hidden {
+  display: none;
+}

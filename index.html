@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tripverse</title>
-    <link rel="stylesheet" href="project.css" />
-    <link rel="stylesheet" href="resposive.css">
+    <title>TripOnn | Explore beyond limits</title>
+    <meta name="description" content="TripOnn: holiday packages, flights and hotels for your next journey." />
+    <link rel="stylesheet" href="css/tripOnn.css" />
+    <link rel="stylesheet" href="css/wishlist.css" />
+    <link rel="stylesheet" href="css/booking.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" href="./svg/logo (3).svg" type="image/svg" sizes="32x32" />
+    <link rel="icon" href="./favicon.ico?v=8" sizes="any" />
+    <link rel="icon" href="./src/favicon/tripOnn_favicon.png?v=8" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./src/favicon/tripOnn_favicon_48.png?v=8" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="./src/favicon/tripOnn_favicon_192.png?v=8" />
   </head>
   <body>
     <!-- Progress bar -->
@@ -24,65 +29,93 @@
           <div class="logo-box">
             <div class="logo">
               <span id="L1">Trip</span>
-              <span id="L2">verse</span>
-              <i id="plane" class="fa-brands fa-avianex"></i>
+              <span id="L2">Onn</span>
+              <i class="plane-icon fa-brands fa-avianex"></i>
             </div>
             <div id="tagline">
               <p>explore beyond limits</p>
             </div>
           </div>
-
           <!-- Navigation Option -->
-          <div class="options">
+          <div class="options" id="mobileNav">
             <a href="#">Holiday packages</a>
             <a href="#">Services</a>
             <a href="#">Contact us</a>
             <a href="#">About us</a>
           </div>
-          <!-- Navigation Buttons -->
           <div class="btn">
-            <button id="btn1">
+            <button type="button" id="btn1">
               Book now <i class="fa-solid fa-angle-right"></i>
             </button>
-            
-            <button id="btn2"><i class="fa-solid fa-user-tie"></i>
+            <!-- Wishlist heart: shows everything the user has saved -->
+            <button type="button" id="navWishlistBtn" aria-label="View wishlist">
+              <i class="fa-regular fa-heart"></i>
+              <span class="wishlist-count hidden" id="wishlistCount">0</span>
+            </button>
+            <button type="button" id="btn2">
+              <i class="fa-solid fa-user-tie"></i>
               Login
             </button>
           </div>
+          <!-- Wishlist dropdown panel -->
+          <div class="wishlist-panel hidden" id="wishlistPanel">
+            <div class="wishlist-panel-head">
+              <h3>My Wishlist</h3>
+              <button type="button" id="closeWishlistPanel" aria-label="Close wishlist">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div id="wishlistItemsList"></div>
+            <p class="wishlist-empty-msg" id="wishlistEmptyMsg">
+              Your wishlist is empty. Tap the heart on any card to save it here.
+            </p>
+          </div>
+          <!-- Mobile hamburger -->
+          <button
+            type="button"
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
       </nav>
-      <!-- Home-Page Discription -->
-      <div class="intro">
-        <div class="intro-box">
-          <h4>
-            <i class="fa-solid fa-map-location-dot"></i> 2000+ <br />
-            destination
-          </h4>
-        </div>
-        <!-- Row-Div Made a specific Vertical LIne -->
-        <div class="row"></div>
-        <div class="intro-box">
-          <h4><i class="fa-solid fa-toolbox"></i> 1000+ <br />packages</h4>
-        </div>
-        <div class="row"></div>
-        <div class="intro-box">
-          <h4><i class="fa-solid fa-users"></i> 20k+ <br />Happy Travelers</h4>
-        </div>
-        <div class="row"></div>
-        <div class="intro-box">
-          <h4>
-            <i class="fa-solid fa-cart-flatbed-suitcase"></i> 3.6
-            <i id="rating" class="fa-solid fa-star"></i> <br />Customer Rating
-          </h4>
-        </div>
-      </div>
+      <div class="nav-scrim" id="navScrim"></div>
     </header>
-
     <main>
       <section class="hero">
-        <!-- Plane Animation -->
-        <div class="animation">
-          <img src="./svg/plane.png" alt="not found" />
+        <!-- Home-Page Discription -->
+        <div class="intro">
+          <div class="intro-box">
+            <h4>
+              <i class="fa-solid fa-map-location-dot"></i> 2000+ <br />
+              destinations
+            </h4>
+          </div>
+          <!-- Row-Div Made a specific Vertical LIne -->
+          <div class="row"></div>
+          <div class="intro-box">
+            <h4><i class="fa-solid fa-toolbox"></i> 1000+ <br />packages</h4>
+          </div>
+          <div class="row"></div>
+          <div class="intro-box">
+            <h4>
+              <i class="fa-solid fa-users"></i> 20k+ <br />Happy Travelers
+            </h4>
+          </div>
+          <div class="row"></div>
+          <div class="intro-box">
+            <h4>
+              <i class="fa-solid fa-cart-flatbed-suitcase"></i> 3.6
+              <i id="rating" class="fa-solid fa-star"></i> <br />Customer Rating
+            </h4>
+          </div>
+        </div>
+        <!-- HERO IMAGE -->
+        <div class="hero-nav">
+          <img src="./src/bastien-nvs-FIyk3oGs118-unsplash.jpg" alt="Scenic travel destination" />
         </div>
         <!-- Content Box -->
         <div class="hero-content">
@@ -90,28 +123,44 @@
           <h1>
             Embark on <br />
             <span class="highlights">unforgettable</span> Journeys <br />
-            with <span class="brand">Tripverse</span>
+            with <span class="brand">TripOnn</span>
           </h1>
           <p class="description">
             Discover breathtaking destinations, unique experiences ,<br />
             and memories that last a lifetime.
           </p>
-          <div class="button">
-            <button id="explore">
-              Explore Destinations <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="hero-search">
+          <div class="hero-search-tabs">
+            <button type="button" class="hero-tab active" data-mode="packages">
+              Packages
+            </button>
+            <button type="button" class="hero-tab" data-mode="hotels">
+              Hotels
+            </button>
+            <button type="button" class="hero-tab" data-mode="flights">
+              Flights
             </button>
           </div>
+          <div class="hero-search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="heroSearchInput"
+              placeholder="Where do you want to go?"
+            />
+            <button type="button" class="hero-search-btn">Search</button>
+          </div>
         </div>
-      </section>
-
-      <!--  Travel-Packages -->
+      </section> 
+      <!-- Travel-Packages -->
       <section class="smooth-appear">
         <div class="packages">
+          <!-- Packages Intro -->
           <div class="content-box">
             <p class="heading">
-              <i class="fa-solid fa-code-commit"></i> Popular Destinations
+              <i class="fa-solid fa-code-commit"></i> Popular Packages
             </p>
-            <br />
             <h2>
               Top Picks For <br />Your Next
               <span class="highlight-text"> Adventure </span>
@@ -120,177 +169,176 @@
               Handpicked destinations around the world just for you. Discover,
               explore and create memories.
             </p>
-            <br />
-            <button id="desc">
-              View All Destination
-              <i class="fa-solid fa-circle-chevron-right"></i>
-            </button>
+            <a href="packages.html" class="packages-all">
+              View All Packages
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-          <!-- Top-Destinations -->
-          <div class="card">
-            <img src="./src/bali.jpg" alt="bali beach" />
-            <div class="card-content">
-              <h3>Bali,Indonesia</h3>
-              <p>Starting from <span id="price">&#8377; 1,45,000</span></p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./src/beach.jpg" alt="maldives beach" />
-            <div class="card-content">
-              <h3>Male',Maldives</h3>
-              <p>Starting from <span id="price">&#8377; 1,20,000</span></p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./src/cinque.jpg" alt="Cinque terre" />
-            <div class="card-content">
-              <h3>Cinque terre,Italy</h3>
-              <p>Starting from <span id="price">&#8377; 2,10,000</span></p>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./src/south-korea.jpg" alt="South Korea" />
-            <div class="card-content">
-              <h3>South Korea,Korea</h3>
-              <p>Starting from <span id="price">&#8377; 2,50,000</span></p>
+          <!-- Packages Carousel: cards are injected by JS from travelData.json -->
+          <div class="packages-carousel">
+            <div class="packages-track" id="packagesTrack"></div>
+            <!-- Carousel Controls -->
+            <div class="packages-controls">
+              <button
+                type="button"
+                class="packages-arrow"
+                id="packagesPrev"
+                aria-label="Previous package"
+              >
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+              <button
+                type="button"
+                class="packages-arrow"
+                id="packagesNext"
+                aria-label="Next package"
+              >
+                <i class="fa-solid fa-angle-right"></i>
+              </button>
             </div>
           </div>
         </div>
         <!--  Travel Option -->
         <div class="trip-option">
           <p class="trip-title">Explore By Interest</p>
-
           <div class="trip-container">
-            <div class="trip-items">
-              <div class="icon-circle">
-                <i class="fa-solid fa-umbrella-beach"></i>
-              </div>
-              <span>Beach</span>
-            </div>
-
-            <div class="trip-items">
-              <div class="icon-circle border">
-                <i class="fa-solid fa-volcano"></i>
-              </div>
-              <span>Mountain</span>
-            </div>
-
-            <div class="trip-items">
-              <div class="icon-circle">
-                <i class="fa-solid fa-person-hiking"></i>
-              </div>
-              <span>Adventure</span>
-            </div>
-
-            <div class="trip-items">
-              <div class="icon-circle">
-                <i class="fa-solid fa-synagogue"></i>
-              </div>
-              <span>City Escape</span>
-            </div>
-
-            <div class="trip-items">
-              <div class="icon-circle">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-              <span>Honeymoon</span>
-            </div>
-
-            <div class="trip-items">
-              <div class="icon-circle">
-                <i class="fa-solid fa-paw"></i>
-              </div>
-              <span>Wildlife</span>
-            </div>
-
-            <div class="trip-items">
-              <div class="icon-circle">
-                <i class="fa-solid fa-landmark"></i>
-              </div>
-              <span>Culture</span>
-            </div>
-
-            <div class="trip-items">
-              <div class="icon-circle">
-                <i class="fa-solid fa-crown"></i>
-              </div>
-              <span>Luxury</span>
-            </div>
+            <button
+              type="button"
+              class="trip-items active"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-solid fa-umbrella-beach"></i
+                ><span>All</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="trip-items"
+              data-filter="mountain"
+              aria-pressed="false"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-solid fa-volcano"></i><span>Mountain</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="trip-items"
+              data-filter="adventure"
+              aria-pressed="false"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-solid fa-person-hiking"></i
+                ><span>Adventure</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="trip-items"
+              data-filter="city"
+              aria-pressed="false"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-solid fa-synagogue"></i
+                ><span>City Escape</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="trip-items"
+              data-filter="honeymoon"
+              aria-pressed="false"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-regular fa-heart"></i><span>Honeymoon</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="trip-items"
+              data-filter="wildlife"
+              aria-pressed="false"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-solid fa-paw"></i><span>Wildlife</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="trip-items"
+              data-filter="culture"
+              aria-pressed="false"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-solid fa-landmark"></i><span>Culture</span></span
+              >
+            </button>
+            <button
+              type="button"
+              class="trip-items"
+              data-filter="luxury"
+              aria-pressed="false"
+            >
+              <span class="icon-circle border"
+                ><i class="fa-solid fa-crown"></i><span>Luxury</span></span
+              >
+            </button>
           </div>
         </div>
-
-        <!-- Popular-packages -->
-        <div class="container">
-          <div class="context">
-            <div id="text">
+        <!-- Trips: interest filter ke results, injected by JS -->
+        <div class="container trips-section" id="tripsSection">
+          <div class="trips-head">
+            <div class="context">
               <h3>
-                Unforgettable <br />
-                <span id="bold-text">Experiences</span>
+                Unforgettable <span class="highlight-text">Experiences</span>
               </h3>
               <p>
-                Unique activities and immersive <br />
-                experiences crafted for <br />
-                every kind of traveler.
+                Unique activities and immersive experiences crafted for every
+                kind of traveler.
               </p>
             </div>
-            <div class="button-click">Explore Experiences</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-image">
-              <img src="./src/balloon.jpg" alt="hot-airballon" />
-              <div class="hero-icon">
-                <img src="./svg/hot-air-balloon.png" alt="hot-airballon" />
+            <div class="trips-actions">
+              <div class="trips-arrows">
+                <button
+                  type="button"
+                  class="packages-arrow"
+                  id="tripsPrev"
+                  aria-label="Previous trips"
+                >
+                  <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <button
+                  type="button"
+                  class="packages-arrow"
+                  id="tripsNext"
+                  aria-label="Next trips"
+                >
+                  <i class="fa-solid fa-angle-right"></i>
+                </button>
               </div>
-              <div class="hero-details">
-                <h3>Hot Air Balloon</h3>
-                <p>Cappadocia, Turkey</p>
-                <span id="price">&#8377;1,20,000</span>
-              </div>
-            </div>
-
-            <div class="hero-image">
-              <img src="./src/scubba.jpg" alt="scuba-diving" />
-              <div class="hero-icon">
-                <img src="./svg/scuba.png" alt="scuba-diving" />
-              </div>
-              <div class="hero-details">
-                <h3>Scuba Diving</h3>
-                <p>Andaman island</p>
-                <span id="price">&#8377;1,10,000</span>
-              </div>
-            </div>
-
-            <div class="hero-image">
-              <img src="./src/northen-lights.jpg" alt="northen-lights" />
-              <div class="hero-icon">
-                <img src="./svg/mountain.png" alt="mountain" />
-              </div>
-              <div class="hero-details">
-                <h3>Northern Lights</h3>
-                <p>Iceland</p>
-                <span id="price">&#8377;1,30,000</span>
-              </div>
-            </div>
-
-            <div class="hero-image">
-              <img src="./src/desert.jpg" alt="" />
-              <div class="hero-icon">
-                <img src="./svg/camel.png" alt="desert" />
-              </div>
-              <div class="hero-details">
-                <h3>Desert Safari</h3>
-                <p>UAE, Dubai</p>
-                <span id="price">&#8377;1,00000</span>
-              </div>
+              <a href="adventures.html" class="button-click" id="tripsMore">
+                <span>Explore more Adventures</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </div>
           </div>
+          <div class="trips-grid" id="tripsGrid"></div>
+          <p class="trips-empty">No trips available for this interest yet.</p>
         </div>
-
+        <!-- Destinations Depth Carousel: cards injected by JS -->
+        <section class="destinations-carousel">
+          <div class="carousel-head">
+            <span class="section-eyebrow">Explore More</span>
+            <h3>Handpicked <span class="highlight-text">Destinations</span></h3>
+          </div>
+          <div class="dest-stack" id="destStack"></div>
+        </section>
         <!-- Offer Bar -->
         <div class="offers">
           <div class="left-nav">
+            <img src="./src/offerbar.jpg" alt="notFound" />
             <div class="offer-text">
               <p>Limited Time Offer</p>
               <h3>
@@ -298,33 +346,27 @@
                 on Summer Packages!
               </h3>
             </div>
-
             <!-- Countdown clock -->
             <div class="timelapse">
               <div class="clock">
-                <h3>02</h3>
+                <h3 id="cd-d">02</h3>
                 <p>Days</p>
               </div>
-
               <div class="clock">
-                <h3>14</h3>
+                <h3 id="cd-h">14</h3>
                 <p>Hours</p>
               </div>
               <div class="clock">
-                <h3>45</h3>
+                <h3 id="cd-m">45</h3>
                 <p>Mins</p>
               </div>
               <div class="clock">
-                <h3>30</h3>
+                <h3 id="cd-s">30</h3>
                 <p>Secs</p>
               </div>
             </div>
-
             <div class="offer-button">
-              <button>Grab the deal</button>
-            </div>
-            <div class="cartoon">
-              <img src="./svg/heart-route.png" alt="no images "/>
+              <button type="button">Grab the deal</button>
             </div>
           </div>
           <!-- Right Nav -->
@@ -333,15 +375,14 @@
               <h3>Get Exclusive Travel Deals <br />in Your Inbox</h3>
               <p>Subscribe now and never miss <br />amazing offers!</p>
             </div>
-
             <!-- Search-bar -->
-            <div class="search-bar">
+            <div id="email-bar">
               <input type="text" placeholder="Enter your email" />
-              <button>Subscribe</button>
+              <button type="submit">Subscribe</button>
             </div>
             <!-- plane logo -->
             <div class="plane-logo">
-              <img src="./svg/paper-plane.png" alt="image not found" />
+              <img src="./src/plane-hearts.png" alt="image not found" />
             </div>
           </div>
         </div>
@@ -351,111 +392,98 @@
     <footer>
       <div class="reviews">
         <div class="review-text">
-          <h3>Why Travelers <span>Love</span> Tripverse</h3>
+          <span class="section-eyebrow">Testimonials</span>
+          <h3>Why travelers <span>love</span> TripOnn</h3>
+          <p class="review-lede">
+            Real trips, real feedback — hear it from our travelers.
+          </p>
         </div>
         <!-- 1st customer-review -->
         <div class="left-box">
           <div class="customers-review">
+            <i class="fa-solid fa-quote-right quote-mark"></i>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="review-box">
+              TripOnn made our Bali vacation absolutely perfect.
+            </p>
             <div class="customer-profile">
               <div class="customer">
-                <img src="./src/man1.jpg" alt="no images" />
-                <div class="rating">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
+                <img src="./src/reviwer1.png" alt="Sankar" />
               </div>
               <div class="customer-details">
-                <h3>Tony Micheal</h3>
-                <p>South Africa</p>
+                <h3>Sankar</h3>
+                <p>Chennai</p>
               </div>
-            </div>
-
-            <div class="review-box">
-              <p>
-                "Tripverse made our Bali vacation absolutely perfect. Everything
-                was well planned and hassle-free!"
-              </p>
             </div>
           </div>
-          <!-- 2nd customer-review -->
           <div class="customers-review">
+            <i class="fa-solid fa-quote-right quote-mark"></i>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="review-box">
+              TripOnn made everything well planned and hassle-free!
+            </p>
             <div class="customer-profile">
               <div class="customer">
-                <img src="./src/man2.jpg" alt="not-found" />
-                <div class="rating">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </div>
+                <img src="./src/reviwer2.png" alt="Satya" />
               </div>
               <div class="customer-details">
-                <h3>Jack alex</h3>
-                <p>London,USA</p>
+                <h3>Satya</h3>
+                <p>Maharashtra</p>
               </div>
-            </div>
-            <div class="review-box">
-              <p>
-                "The Maldives trip was a dream come true. Great service and
-                unforgettable memories!"
-              </p>
             </div>
           </div>
-          <!-- 3rd customer-review -->
           <div class="customers-review">
+            <i class="fa-solid fa-quote-right quote-mark"></i>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="review-box">Thank you for making my trip memorable!</p>
             <div class="customer-profile">
               <div class="customer">
-                <img src="./src/man3.jpg" alt="no-found" />
-              </div>
-              <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+                <img src="./src/reviwer3.png" alt="Survhi" />
               </div>
               <div class="customer-details">
-                <h3>Tanmay roy</h3>
-                <p>Maharastra,India</p>
+                <h3>Survhi</h3>
+                <p>New Delhi</p>
               </div>
-            </div>
-            <div class="review-box">
-              <p>"Tripverse made well planned and hassle-free trips"</p>
             </div>
           </div>
         </div>
         <!-- right-box -->
         <div class="right-box">
+          <img src="./src/tripOnnApp.png" alt="TripOnnApp" />
           <div class="box-input">
             <div class="text-ads">
               <h3>Travel Smarter</h3>
-              <h4>Download the Tripverse App</h4>
+              <h4>Download</h4>
+              <span>Trip</span><span>Onn</span>
               <p>Your journey, in your pocket.</p>
             </div>
             <div class="promotion">
               <div class="Qr-code">
                 <img src="./src/Qrcode.png" alt="not found" />
               </div>
-              <div class="download-apps">
-                <div class="app-store">
-                  <img src="./svg/applestore.png" alt="not found" />
-                </div>
-                <div class="play-store">
-                  <img src="./svg/playstore.png" alt="not found" />
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="cell-phone">
-            <img src="./svg/cell-phone.png" alt="not dound" />
           </div>
         </div>
       </div>
       <!-- footer -->
       <div class="footer-box">
         <div class="footer">
-          <h3><i id="plane" class="fa-brands fa-avianex"></i>Tripverse</h3>
+          <h3>TripOnn<i class="plane-icon fa-brands fa-avianex"></i></h3>
           <p>
             Explore beyond limits. Discover destinations, create memories that
             last a lifetime.
@@ -465,19 +493,21 @@
             <a
               href="https://www.facebook.com/share/174R29vppd/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i class="fa-brands fa-square-facebook"></i>
             </a>
-
             <a
               href="https://www.instagram.com/__rahulvx?igsh=cGc4Z3FiamdnNThs"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i class="fa-brands fa-instagram"></i>
             </a>
             <a
               href="https://www.linkedin.com/in/rahul-kumar-a49258320?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i class="fa-brands fa-linkedin"></i>
             </a>
@@ -490,7 +520,7 @@
           <ul>
             <li><a href="#">Bali, Indonesia</a></li>
             <li><a href="#">Maldives </a></li>
-            <li><a href="#"> Switzrerland</a></li>
+            <li><a href="#"> Switzerland</a></li>
             <li><a href="#"> Italy</a></li>
             <li><a href="#">South Korea</a></li>
           </ul>
@@ -527,10 +557,9 @@
         </div>
         <div class="footer">
           <h3>Contact info</h3>
-
           <ul>
             <li><a href="#"> +91 98766 43210 </a></li>
-            <li><a href="#">support@tripverse.com </a></li>
+            <li><a href="#">support@tripOnn.com </a></li>
             <li>
               <a href="#"> 123, Travel Street, New Delhi, India - 110001</a>
             </li>
@@ -538,83 +567,94 @@
         </div>
       </div>
     </footer>
-    <!-- Java Script -->
-    
- <div class="login-overlay hidden">
-
-<div class="login-container">
-
-<div class="left-login">
-<img src="./src/flower-mountain.jpg" alt="">
-</div>
-
-<div class="right-login">
-
-<div class="login-logo-box">
-<span id="firstLogo">Trip</span><Span id="secndlogo">verse</Span>
-<i id="login-plane" class="fa-brands fa-avianex"></i>
-</div>
-
-<p id="login-p2">Explore more , Experience more.</p>
-
-<div class="login-btns">
-<button id="button1-login">Sign Up</button>
-<button id="button2-login">Login</button>
-</div>
-
-<div class="login-advise-text">
-<p id="login-p3">Begin Your Adventure</p>
-<p id="login-p4">Sign Up with Open account</p>
-</div>
-
-<div class="login-options">
-
-<button id="apple-login">
-<img src="./svg/apple.png">
-</button>
-
-<button id="google-login">
-<img src="./svg/google.png">
-</button>
-
-<button id="facebook-login">
-<img src="./svg/facebook.png">
-</button>
-
-</div>
-
-<div class="login-divider">
-<span>or</span>
-</div>
-
-<button class="close-login"><i class="fa-regular fa-circle-xmark"></i></button>
-
-<div class="form-details">
-  
-<div class="inputbox-login">
-  <i class="fa-solid fa-circle-user"></i>
-  <input type="text"   placeholder="Enter your userame" >
-  </div>
-
-  <div class="inputbox-login">
-    <i class="fa-solid fa-lock"></i>
-  <input type="password" placeholder="Enter your password">
-  </div>
-
-</div>
-<div class="creatAc-button">
-  <button>Creat Account</button>
-</div>
-<div class="exist-login">
-<span> Already have an account?</span> 
- <a href="">Login</a>
-</div>
-</div>
-
-
-</div>
-
-</div>
-<script src="project.js"></script>
+    <!-- Login Overlay-->
+    <div
+      class="login-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="TripOnn login and sign up"
+    >
+      <div class="login-container">
+        <div class="left-login">
+          <img src="./src/loginOverlay.jpg" alt="not found" />
+          <div class="poet">
+            <span><i class="fa-solid fa-quote-left"></i></span>
+            <p>Jobs fill your pocket,</p>
+            <p>adventures fill your soul.</p>
+            <span>- Jamie Lyn Beatty</span>
+          </div>
+        </div>
+        <div class="right-login">
+          <div class="login-logo-box">
+            <span id="firstLogo">Trip</span><span id="secndlogo">Onn</span>
+            <i id="login-plane" class="fa-brands fa-avianex"></i>
+          </div>
+          <p id="login-p2">Explore more , Experience more.</p>
+          <div class="login-btns">
+            <button type="button" id="button1-login">Sign Up</button>
+            <button type="button" id="button2-login">Login</button>
+          </div>
+          <div class="login-advise-text">
+            <p id="login-p3">Begin Your Adventure</p>
+            <p id="login-p4">Sign Up with Open account</p>
+          </div>
+          <div class="login-options">
+            <button
+              type="button"
+              id="apple-login"
+              aria-label="Continue with Apple"
+            >
+              <img src="./src/apple-logo.png" alt="" />
+            </button>
+            <button
+              type="button"
+              id="google-login"
+              aria-label="Continue with Google"
+            >
+              <img src="./src/google.png" alt="" />
+            </button>
+            <button
+              type="button"
+              id="facebook-login"
+              aria-label="Continue with Facebook"
+            >
+              <img src="./src/facebook.png" alt="" />
+            </button>
+          </div>
+          <div class="login-divider">
+            <span>or</span>
+          </div>
+          <button type="button" class="close-login" aria-label="Close login">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+          <div class="form-details">
+            <div class="inputbox-login">
+              <i class="fa-solid fa-circle-user"></i>
+              <input
+                type="text"
+                autocomplete="username"
+                placeholder="Enter your username"
+              />
+            </div>
+            <p class="field-error" id="username-error"></p>
+            <div class="inputbox-login">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+              />
+            </div>
+            <p class="field-error" id="password-error"></p>
+          </div>
+          <div class="creatAc-button">
+            <button type="button">Create Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/wishlist.js" defer></script>
+    <script src="js/tripOnn.js" defer></script>
+    <script src="js/booking.js" defer></script>
   </body>
 </html>

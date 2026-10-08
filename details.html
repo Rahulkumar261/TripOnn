@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TripOnn | Trip details</title>
+    <link rel="stylesheet" href="css/tripOnn.css" />
+    <link rel="stylesheet" href="css/wishlist.css" />
+    <link rel="stylesheet" href="css/details.css" />
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="./favicon.ico?v=8" sizes="any" />
+    <link rel="icon" href="./src/favicon/tripOnn_favicon.png?v=8" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./src/favicon/tripOnn_favicon_48.png?v=8" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="./src/favicon/tripOnn_favicon_192.png?v=8" />
+  </head>
+  <body class="detail">
+    <div id="progress-bar"></div>
+
+    <!-- SAME NAVBAR AS HOME PAGE -->
+    <header>
+      <nav>
+        <div class="navbar">
+          <a href="index.html" class="logo-box">
+            <div class="logo">
+              <span id="L1">Trip</span><span id="L2">Onn</span>
+              <i class="plane-icon fa-brands fa-avianex"></i>
+            </div>
+            <div id="tagline"><p>explore beyond limits</p></div>
+          </a>
+          <div class="options" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="#overview">Overview</a>
+            <a href="#nearby">Nearby</a>
+            <a href="#map">Map</a>
+          </div>
+          <div class="btn">
+            <button type="button" id="btn1">
+              Book now <i class="fa-solid fa-angle-right"></i>
+            </button>
+            <button type="button" id="navWishlistBtn" aria-label="View wishlist">
+              <i class="fa-regular fa-heart"></i>
+              <span class="wishlist-count hidden" id="wishlistCount">0</span>
+            </button>
+            <button type="button" id="btn2">
+              <i class="fa-solid fa-user-tie"></i> Login
+            </button>
+          </div>
+          <div class="wishlist-panel hidden" id="wishlistPanel">
+            <div class="wishlist-panel-head">
+              <h3>My Wishlist</h3>
+              <button type="button" id="closeWishlistPanel" aria-label="Close wishlist">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <div id="wishlistItemsList"></div>
+            <p class="wishlist-empty-msg" id="wishlistEmptyMsg">
+              Your wishlist is empty. Tap the heart on any card to save it here.
+            </p>
+          </div>
+          <button type="button" class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="nav-scrim" id="navScrim"></div>
+    </header>
+
+    <!-- Filled by details.js -->
+    <main class="detail-wrap" id="detail">
+      <p class="d-empty">Loading trip details…</p>
+    </main>
+
+    <footer class="d-footer">
+      <p>&copy; TripOnn. Explore beyond limits.</p>
+    </footer>
+
+    <!-- LOGIN MODAL (same ids as home page, so tripOnn.js handles it) -->
+    <div class="login-overlay hidden" role="dialog" aria-modal="true" aria-label="TripOnn login and sign up">
+      <div class="login-container">
+        <div class="right-login">
+          <div class="login-logo-box">
+            <span id="firstLogo">Trip</span><span id="secndlogo">Onn</span>
+            <i id="login-plane" class="fa-brands fa-avianex"></i>
+          </div>
+          <p id="login-p2">Explore more , Experience more.</p>
+          <div class="login-btns">
+            <button type="button" id="button1-login">Sign Up</button>
+            <button type="button" id="button2-login">Login</button>
+          </div>
+          <div class="login-advise-text">
+            <p id="login-p3">Begin Your Adventure</p>
+            <p id="login-p4">Sign Up with Open account</p>
+          </div>
+          <button type="button" class="close-login" aria-label="Close login">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+          <div class="form-details" style="margin-top: 20px">
+            <div class="inputbox-login">
+              <i class="fa-solid fa-circle-user"></i>
+              <input type="text" autocomplete="username" placeholder="Enter your username" />
+            </div>
+            <p class="field-error"></p>
+            <div class="inputbox-login">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" autocomplete="current-password" placeholder="Enter your password" />
+            </div>
+            <p class="field-error"></p>
+          </div>
+          <div class="creatAc-button"><button type="button">Create Account</button></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/wishlist.js" defer></script>
+    <script src="js/tripOnn.js" defer></script>
+    <script src="js/details.js" defer></script>
+  </body>
+</html>
