@@ -131,9 +131,8 @@ Places without an entry in `details.json` still get a details page with default 
 
 ## Author
 
-Made by **<Rahul Sethi>**
-- GitHub: [@your-username](https://github.com/your-username)
-
+Made by **Rahul Kumar**
+- GitHub: [@Rahulkumar261](https://github.com/Rahulkumar261)
 ## License
 
 Copyright (c) 2026 <Rahul sethi>. All rights reserved.
