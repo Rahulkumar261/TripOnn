@@ -5,9 +5,8 @@
 > 🚧 Work in progress. New features are added regularly.
 
 ## Live demo
+https://triponn-ui.vercel.app
 
-<!-- Add your link here once it is hosted, for example on Netlify or GitHub Pages -->
-Coming soon.
 
 ## Features
 
@@ -82,8 +81,8 @@ The site loads JSON files with `fetch`, so it must be served over HTTP. Opening 
 
 1. Clone the repo
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
-   cd <repo-name>
+   git clone https://github.com/Rahulkumar261/TripOnn.git
+cd TripOnn
    ```
 2. Open the folder in VS Code and click **Go Live** (Live Server extension).
 3. Open the address Live Server shows, for example `http://localhost:5500`.
@@ -133,9 +132,9 @@ Places without an entry in `details.json` still get a details page with default 
 
 Made by **Rahul Kumar**
 - GitHub: [@Rahulkumar261](https://github.com/Rahulkumar261)
-## License
 
-Copyright (c) 2026 <Rahul sethi>. All rights reserved.
+## License
+Copyright (c) 2026 Rahul Kumar. All rights reserved.
 
 This code is published for viewing and portfolio purposes only. You may not copy,
 modify, distribute or use it, in whole or in part, without written permission.
