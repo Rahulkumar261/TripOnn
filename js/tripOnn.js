@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 850 && mobileNav.classList.contains("open"))
+      if (window.innerWidth > 1000 && mobileNav.classList.contains("open"))
         closeNav();
     });
   }

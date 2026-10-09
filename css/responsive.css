@@ -1,0 +1,203 @@
+/* =========================================================
+   responsive.css
+   Load AFTER tripOnn.css, wishlist.css and booking.css.
+   1) Navbar that fits on every screen width
+   2) New slide-in mobile menu (drawer)
+   ========================================================= */
+
+/* ---------- Navbar: never let children push each other out ---------- */
+.navbar > * { min-width: 0; }
+.logo-box { flex-shrink: 1; }
+.logo { white-space: nowrap; }
+
+/* ---------- Logo with tagline UNDER it (all widths) ---------- */
+.logo-box {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+}
+.logo-box .logo { line-height: 1; }
+#tagline { line-height: 1; }
+#tagline p {
+  margin: 0;
+  font-size: 8px;
+  letter-spacing: 2.4px;
+  white-space: nowrap;
+}
+
+/* ---------- Tablet and phone: hamburger + drawer (<= 1000px) ---------- */
+@media (max-width: 1000px) {
+  header { padding: 10px 3%; z-index: 1600; }
+
+  .navbar {
+    position: relative;
+    justify-content: flex-start;
+    min-height: 62px;
+    gap: 10px;
+    padding: 0 14px;
+  }
+
+  /* logo left, buttons pushed to the right, hamburger last */
+  .btn { margin-left: auto; gap: 6px; }
+
+  .nav-toggle {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    font-size: 18px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1601;
+  }
+
+  /* ----- Drawer ----- */
+  .options {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: min(320px, 86vw);
+    max-height: none;
+    margin: 0;
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    background: #fff;
+    border: 0;
+    border-radius: 28px 0 0 28px;
+    box-shadow: none;
+    overflow-y: auto;
+    transform: translateX(105%);
+    visibility: hidden;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+      visibility 0s linear 0.35s,
+      box-shadow 0.35s ease;
+    z-index: 1500;
+  }
+  .options.open {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: -24px 0 60px rgba(8, 30, 30, 0.22);
+    transition-delay: 0s;
+  }
+
+  /* "Menu" title (sits level with the close button) */
+  .options::before {
+    content: "Menu";
+    display: block;
+    margin: 6px 0 22px;
+    font: 800 22px "Manrope", sans-serif;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+  }
+
+  /* footer line inside the drawer */
+  .options::after {
+    content: "TripOnn · Explore beyond limits";
+    margin-top: auto;
+    padding-top: 24px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* menu links */
+  .options a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 2px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    transition: color 0.25s ease, padding-left 0.25s ease;
+  }
+  /* arrow instead of the desktop underline */
+  .options a::after {
+    content: "\2192";
+    position: static;
+    display: inline;
+    width: auto;
+    height: auto;
+    background: none;
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.25s ease;
+  }
+  .options a:hover,
+  .options a:focus-visible {
+    background: none;
+    color: var(--primary);
+    transform: none;
+    padding-left: 8px;
+  }
+  .options a:hover::after { width: auto; transform: translateX(4px); }
+
+  /* dark layer behind the drawer */
+  .nav-scrim {
+    background: rgba(6, 20, 20, 0.5);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  .navbar { min-height: 58px; padding: 0 10px; gap: 8px; border-radius: 16px; }
+  .logo { font-size: 21px; letter-spacing: -1px; }
+  .nav-toggle { width: 38px; height: 38px; }
+  #btn1 { padding: 9px 11px; font-size: 11px; }
+  #btn1 i { display: none; }
+  #btn2 { padding: 9px 8px; font-size: 11px; }
+  #navWishlistBtn { padding: 0 3px; font-size: 18px; }
+}
+
+/* Small phones: Login shows only its icon */
+@media (max-width: 420px) {
+  #btn2 { font-size: 0; padding: 9px 10px; }
+  #btn2 i { font-size: 15px; margin: 0; }
+}
+
+/* Very small phones (320px) */
+@media (max-width: 350px) {
+  .navbar { padding: 0 8px; gap: 6px; }
+  .logo { font-size: 19px; }
+  .logo .plane-icon { display: none; }
+  .nav-toggle { width: 34px; height: 34px; font-size: 16px; }
+  #btn1 { padding: 8px 9px; font-size: 10px; }
+  #btn2 { padding: 8px; }
+  .btn { gap: 3px; }
+}
+
+/* =========================================================
+   Page sections that were cramped between 851px and 1100px
+   ========================================================= */
+@media (max-width: 1400px) {
+  /* testimonials: reviews on top, app box below */
+  .reviews { grid-template-columns: 1fr; }
+  .review-text { width: 100%; }
+  .left-box { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+  /* plane picture must not cover the newsletter heading */
+  .plane-logo { width: clamp(110px, 18vw, 240px); }
+}
+
+@media (max-width: 350px) {
+  .options::after { font-size: 10px; letter-spacing: 0.8px; }
+}
